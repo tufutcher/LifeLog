@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="module">
+    import { saveEntry } from "../core/supabase.js"
+
+    window.save = async function () {
+      const data = {
+        sleep: document.getElementById("sleep").value,
+        body: document.getElementById("body").value,
+        food: document.getElementById("food").value,
+        events: document.getElementById("events").value,
+        thoughts: document.getElementById("thoughts").value
+      }
+
+      await saveEntry(data)
+      alert("saved")
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Today</h1>
+
+  <input id="sleep" placeholder="sleep"><br>
+  <input id="body" placeholder="body"><br>
+  <input id="food" placeholder="food"><br><br>
+
+  <textarea id="events" placeholder="events"></textarea><br>
+  <textarea id="thoughts" placeholder="thoughts"></textarea><br>
+
+  <button onclick="save()">save</button>
+</body>
+</html>
