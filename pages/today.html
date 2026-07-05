@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="module">
-    import { saveEntry } from "../core/supabase.js"
-
-    window.save = async function () {
-      const data = {
-        sleep: document.getElementById("sleep").value,
-        body: document.getElementById("body").value,
-        food: document.getElementById("food").value,
-        events: document.getElementById("events").value,
-        thoughts: document.getElementById("thoughts").value
-      }
-
-      await saveEntry(data)
-      alert("saved")
-    }
-  </script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
   <h1>Today</h1>
 
-  <input id="sleep" placeholder="sleep"><br>
-  <input id="body" placeholder="body"><br>
-  <input id="food" placeholder="food"><br><br>
+  <div class="card">
+    <h2>身体</h2>
+    <input placeholder="睡眠 / 状态 / 饮食">
+  </div>
 
-  <textarea id="events" placeholder="events"></textarea><br>
-  <textarea id="thoughts" placeholder="thoughts"></textarea><br>
+  <div class="card">
+    <h2>事件</h2>
+    <textarea></textarea>
+  </div>
 
-  <button onclick="save()">save</button>
+  <div class="card">
+    <h2>思考</h2>
+    <textarea></textarea>
+  </div>
+
+  <script src="nav.js"></script>
+
 </body>
 </html>
