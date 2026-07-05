@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="module">
+    import { getEntries } from "../core/supabase.js"
+
+    async function load() {
+      const data = await getEntries()
+
+      document.body.innerHTML += data
+        .reverse()
+        .map(d => `
+          <div style="margin-bottom:20px;">
+            <b>${d.created_at}</b><br>
+            ${d.thoughts}
+          </div>
+        `).join("")
+    }
+
+    load()
+  </script>
+</head>
+
+<body>
+  <h1>History</h1>
+</body>
+</html>
