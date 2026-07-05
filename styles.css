@@ -43,3 +43,30 @@ textarea {
   min-height: 70px;
   resize: none;
 }
+
+.tabbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 10px 14px;
+  display: flex;
+  gap: 18px;
+  box-shadow: var(--shadow);
+}
+
+.tabbar a {
+  text-decoration: none;
+  color: var(--sub);
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.tabbar a.active {
+  background: black;
+  color: white;
+}
