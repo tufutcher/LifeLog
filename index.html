@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Life Log</title>
+</head>
+
+<body>
+  <h1>Today</h1>
+
+  <input id="sleep" placeholder="睡眠">
+  <input id="body" placeholder="身体状态">
+  <input id="food" placeholder="吃了什么">
+
+  <br><br>
+
+  <textarea id="events" placeholder="今天发生了什么"></textarea>
+
+  <br><br>
+
+  <textarea id="thoughts" placeholder="思考/胡思乱想"></textarea>
+
+  <br><br>
+
+  <button onclick="save()">保存</button>
+
+  <script>
+    async function save() {
+      const data = {
+        sleep: document.getElementById('sleep').value,
+        body: document.getElementById('body').value,
+        food: document.getElementById('food').value,
+        events: document.getElementById('events').value,
+        thoughts: document.getElementById('thoughts').value,
+      }
+
+      const res = await fetch("YOUR_SUPABASE_URL/rest/v1/entries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "YOUR_SUPABASE_ANON_KEY",
+          "Authorization": "Bearer YOUR_SUPABASE_ANON_KEY"
+        },
+        body: JSON.stringify(data)
+      })
+
+      alert("已保存")
+    }
+  </script>
+</body>
+</html>
