@@ -1,51 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Life Log</title>
-</head>
+<body style="font-family: Arial; padding: 40px;">
 
-<body>
-  <h1>Today</h1>
+  <h1>Life System</h1>
 
-  <input id="sleep" placeholder="睡眠">
-  <input id="body" placeholder="身体状态">
-  <input id="food" placeholder="吃了什么">
+  <a href="pages/today.html">Today（记录）</a><br><br>
+  <a href="pages/history.html">History（历史）</a><br><br>
+  <a href="pages/insight.html">Insight（分析）</a>
 
-  <br><br>
-
-  <textarea id="events" placeholder="今天发生了什么"></textarea>
-
-  <br><br>
-
-  <textarea id="thoughts" placeholder="思考/胡思乱想"></textarea>
-
-  <br><br>
-
-  <button onclick="save()">保存</button>
-
-  <script>
-    async function save() {
-      const data = {
-        sleep: document.getElementById('sleep').value,
-        body: document.getElementById('body').value,
-        food: document.getElementById('food').value,
-        events: document.getElementById('events').value,
-        thoughts: document.getElementById('thoughts').value,
-      }
-
-      const res = await fetch("https://yrwvkldkmnvdaqohgnzd.supabase.co/rest/v1/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": "sb_publishable_wIJa7xnomukUfqI7pvzV4A_Tyykry9P",
-          "Authorization": "sb_publishable_wIJa7xnomukUfqI7pvzV4A_Tyykry9P"
-        },
-        body: JSON.stringify(data)
-      })
-
-      alert("已保存")
-    }
-  </script>
 </body>
 </html>
