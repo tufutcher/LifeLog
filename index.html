@@ -34,12 +34,12 @@
         thoughts: document.getElementById('thoughts').value,
       }
 
-      const res = await fetch("YOUR_SUPABASE_URL/rest/v1/entries", {
+      const res = await fetch("https://yrwvkldkmnvdaqohgnzd.supabase.co/rest/v1/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "apikey": "YOUR_SUPABASE_ANON_KEY",
-          "Authorization": "Bearer YOUR_SUPABASE_ANON_KEY"
+          "apikey": "sb_publishable_wIJa7xnomukUfqI7pvzV4A_Tyykry9P",
+          "Authorization": "sb_publishable_wIJa7xnomukUfqI7pvzV4A_Tyykry9P"
         },
         body: JSON.stringify(data)
       })
